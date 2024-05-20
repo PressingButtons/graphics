@@ -22,7 +22,7 @@ export function setTexture( gl: WebGL2RenderingContext, texture: WebGLTexture, s
     gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MAG_FILTER, gl.NEAREST);
 }
 
-export function setTextureArray( gl: WebGL2RenderingContext, texture: WebGLTexture, source: HTMLImageElement | ImageData, size?:vec2, slices: number = 1 ) {
+export function setTextureArray( gl: WebGL2RenderingContext, texture: WebGLTexture, source: HTMLImageElement | ImageData, size?:number[], slices: number = 1 ) {
     if(!size) size = [source.width, source.height];
     gl.bindTexture(gl.TEXTURE_2D_ARRAY, texture );
     gl.texImage3D(gl.TEXTURE_2D_ARRAY, 0, gl.RGBA, size[0], size[1], slices, 0, gl.RGBA, gl.UNSIGNED_BYTE, source);

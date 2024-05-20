@@ -8,7 +8,7 @@ export default function generatePaletteShader( gl: WebGL2RenderingContext, model
     const shader = new ShaderProgram( gl, vertex, fragment );
 
     shader.findAttributes(gl, ['a_position', 'a_texcoord', 'a_color', 'a_model', 'a_depth']);
-    shader.findUniforms(gl,   ['u_projection', 'u_view', 'u_texture']);
+    shader.findUniforms(gl,   ['u_projection', 'u_view', 'u_texture', 'u_palette']);
 
     const vao = new VAOGener( );
 
@@ -25,9 +25,7 @@ export default function generatePaletteShader( gl: WebGL2RenderingContext, model
         gl.bindVertexArray( vao.object );
         gl.uniformMatrix4fv( shader.uniforms[0], false, projection );
         gl.uniformMatrix4fv( shader.uniforms[1], false, view );
-        gl.activeTexture( gl.TEXTURE0 );
         gl.uniform1i( shader.uniforms[2], 0);
-        gl.activeTexture( gl.TEXTURE1 );
         gl.uniform1i( shader.uniforms[3], 1);
         gl.drawArraysInstanced(gl.TRIANGLE_STRIP, 0, 4, instances);
     }

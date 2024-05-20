@@ -8,8 +8,8 @@ export default function generateColorShader( gl: WebGL2RenderingContext, model: 
 
     const shader = new ShaderProgram( gl, vertex, fragment );
 
-    shader.findAttributes(gl, ['a_position', 'a_color', 'a_model']);
-    shader.findUniforms(gl,  ['u_projection', 'u_view']);
+    shader.findAttributes(gl,['a_position', 'a_color', 'a_model']);
+    shader.findUniforms(gl,['u_projection', 'u_view']);
 
     const vao = new VAOGener( );
     vao.setAttribute(model, shader.attributes[0], gl.BYTE, 3, 5, 0); //position

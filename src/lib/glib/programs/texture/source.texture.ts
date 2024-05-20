@@ -4,7 +4,7 @@ layout(location=0) in vec4 a_position;
 layout(location=1) in vec2 a_texcoord;
 layout(location=2) in mat4 a_model;
 layout(location=6) in vec4 a_color;
-layout(location=10) in float a_depth;
+layout(location=7) in float a_depth;
 
 out vec4  v_color;
 out vec2  v_texcoord;

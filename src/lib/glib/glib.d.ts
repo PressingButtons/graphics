@@ -7,3 +7,8 @@ interface iModelObject {
     color:vec4,
     depth:number
 }
+
+interface iGLibMessage {
+    route: string;
+    data: any;
+}
